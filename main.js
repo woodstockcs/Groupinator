@@ -3,11 +3,11 @@ var ruleList_raw = [];
 var baseurl = 'http://rms.tomtomgroup.com/';
 var skiplist = [];
 
-var b = "AndrewS, Awesome Dude, Hello, B Block, BBB, BBBBBBB, Yes";
+var b = "NEED, TO, ADD, STUDENTS";
 var d = "BittyA, AldenC, EveC, AbigailD, AndrewF, AlyanaH, ChanceJ, IsabelleJ, OliviaM, AbigailM, SeanN, AdareO, MagnoliaR, AldenS, NatalieS, DavisT, TrevorW, MackenzieY";
 var f = "ZayneA, EvanA, LillyB, CharlotteC, MichaelC, HaleighC, JoshuaD, TylerG, BlakeH, LillyH, SamM, MargaretO, ElizabethP, ErykR, JohnS, OwenS, HaleyS, GunnarW";
-var g = "GGG Student, Awesome Dude, Hello, GG";
-var h = "HHH Student, Awesome Dude, Hello, H Block, HHHH, HHHHHHillary, Yes";
+var g = "NEED, TO, ADD, STUDENTS";
+var h = "NicholasB, TristinB, ChristianB, SilasB, LukeB, LolaD, AudreyE, SofiaK, DaneilL, JosephM, CalebM, TravonO, MollieP, MaceyP, MadisenR, AliceS, AnnaW, SamanthaY, NoraZ";
 
 var theGroupSize = 1;
 
