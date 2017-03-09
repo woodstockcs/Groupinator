@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<html>
+
+<head>
+
+    <title>VoRandomizer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="UTF-8">
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.10.7/api/fnSetFilteringDelay.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+
+    <script src='./main.js'></script>
+
+
+    <style>
+        /*
+          #ruleTable {
+			width: 90%;
+		  }
+          #metaTable {
+			width: 800px;
+		  }
+          #keyColumn {
+            column-width: 200px;
+          }
+          #valueColumn {
+            column-width: 100%;
+          }
+          .tinyColumn {
+            column-width: 2%;
+          }
+          .smColumn {
+            column-width: 10%;
+          }
+          .lgColumn {
+            column-width: 80%;
+          }
+          */
+
+        .button-export {
+            width: 200px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .navbar .navbar-text {
+            color: #ffffff;
+        }
+
+        .navbar-form. navbar-right :last-child {
+            margin-right: 0px;
+        }
+
+        #ruleCount {
+            color: white;
+        }
+
+        #filterCount {
+            color: white;
+        }
+
+        #filterCell {
+            padding-bottom: 8px;
+            text-align: center;
+        }
+
+        #lastUpdated {
+            color: white;
+        }
+
+        #titleText {
+            color: white;
+            font-size: 1.7em;
+            font-weight: bold;
+        }
+
+        #titleCell {
+            padding-bottom: 4px;
+            text-align: left;
+        }
+
+        .warning {
+            color: yellow;
+        }
+
+        #shortMetaInfo {
+            border-left: 1px solid #cccccc;
+            font-size: 0.85em
+        }
+
+        #shortMetaInfo a:link {
+            color: white;
+        }
+
+        .table-no-border>thead>tr>th,
+        .table-no-border>tbody>tr>th,
+        .table-no-border>tfoot>tr>th,
+        .table-no-border>thead>tr>td,
+        .table-no-border>tbody>tr>td,
+        .table-no-border>tfoot>tr>td {
+            border-top: none;
+        }
+
+        .form-control::-webkit-input-placeholder {
+            color: #grey;
+        }
+
+        .form-control:-moz-placeholder {
+            /* FF 4-18 */
+            color: #grey;
+        }
+
+        .form-control::-moz-placeholder {
+            /* FF 19+ */
+            color: #grey;
+        }
+
+        .form-control:-ms-input-placeholder {
+            /* IE 10+ */
+            color: #grey;
+        }
+
+        .navbar-outer {
+            width: 800px;
+        }
+
+        body {
+            padding-top: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid" id="main-navbar">
+            <div class="navbar-form navbar-left">
+                <span id="titleText">Vonada Randomizer</span>
+            </div>
+            <div class="btn-group navbar-form navbar-right" id="rightNavElements">
+              <!--
+                <form action="./php/getCSV.php" method="post" accept-charset="UTF-8">
+                    <button type="submit" class="btn btn-default" onClick="getCSVData();"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> Export as CSV</button>
+                </form>
+              -->
+            </div>
+
+        </div>
+    </nav>
+
+    <div id="errorContainer" class="container hidden">
+        <br><br>
+        <div id="errorBox" class="alert alert-danger" role="alert">General ERROR. Contact andrew.smith@tomtom.com</div>
+    </div>
+    <br>
+    <form>
+    &nbsp;&nbsp;<select id="blockSelector">
+    <option disabled="disabled" selected="selected" value"x">Choose a Block</option>
+  <option value="b">B Block</option>
+  <option value="d">D Block</option>
+  <option value="f">F Block</option>
+  <option value="g">G Block</option>
+    <option value="h">H Block</option>
+</select>
+&nbsp;&nbsp;<select id="sizeSelector">
+<option disabled="disabled" selected="selected" value"x">Choose a Size</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+</form>
+<br>
+<br>
+    &nbsp;&nbsp;<textarea cols="100" id="allStudents" placeholder="Good Morning Mrs Vonada! enter students or select a block!"></textarea>
+    <br><br>&nbsp;&nbsp;<button class="btn btn-default" onClick="createGroups();"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> Groupify!</button>
+    <br><br><div class="container-fluid">
+        <table class="table table-hover" id="ruleTable">
+            <!-- add column header names here -->
+            <thead>
+                <tr>
+                    <th class="lgColumn">#</th>
+                    <th class="lgColumn">Group Members</th>
+
+
+
+
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <br><br><br>
+    </div>
+</body>
+
+</html>
