@@ -3,10 +3,10 @@ var ruleList_raw = [];
 var baseurl = 'http://rms.tomtomgroup.com/';
 var skiplist = [];
 
-var b = "NEED, TO, ADD, STUDENTS";
+var b = "HawleyB, HeatherB, OwenC, OrionC, MatthewF, AnthonyH, EricaK, KayleeL, MasonP, TheresaS, MollyT, LilyWM, JoshuaW";
 var d = "BittyA, AldenC, EveC, AbigailD, AndrewF, AlyanaH, ChanceJ, IsabelleJ, OliviaM, AbigailM, SeanN, AdareO, MagnoliaR, AldenS, NatalieS, DavisT, TrevorW, MackenzieY";
 var f = "ZayneA, EvanA, LillyB, CharlotteC, MichaelC, HaleighC, JoshuaD, TylerG, BlakeH, LillyH, SamM, MargaretO, ElizabethP, ErykR, JohnS, OwenS, HaleyS, GunnarW";
-var g = "NEED, TO, ADD, STUDENTS";
+var g = "CharlieA, BenjaminB, ElyC, HannahC, WillC, ElijahD, IssacE, AdriannaG, AnnaH, CassandraH, ClaytonL, ClaudiaM, HayleyM, DharmaN, AlecP, IvyR, TimothyR, OwenT, GriffinVN";
 var h = "NicholasB, TristinB, ChristianB, SilasB, LukeB, LolaD, AudreyE, SofiaK, DaneilL, JosephM, CalebM, TravonO, MollieP, MaceyP, MadisenR, AliceS, AnnaW, SamanthaY, NoraZ";
 
 var theGroupSize = 1;
