@@ -2,7 +2,24 @@ var ruleList_final = [];
 var ruleList_raw = [];
 var baseurl = 'http://rms.tomtomgroup.com/';
 var skiplist = [];
+var url = "https://woodstockcs.github.io/VoRandomizer/teacher=TeachMe";
+    var captured = /teacher=([^&]+)/.exec(url)[1]; // Value is in [1] ('384' in our case)
+    var result = captured ? captured :'my Default Value' ;
+    var Teachers= ["Poublon", "Bremel", "Vonada", "Smith", "Gulian"];
+    var inList= false ;
+    for (var i = 0; i < Teachers.length; i++){
+      // console.log("Teacher: "+captured);
+      // console.log(Teachers[i]);
+      if (Teachers[i]==captured){
+        console.log("Teacher: "+captured);
+        inList =true;
+        break;
+      }
+}
+if (!inList){
+        console.log("Teacher is not in List");
 
+}
 var b = "HawleyB, HeatherB, OwenC, OrionC, MatthewF, AnthonyH, EricaK, KayleeL, MasonP, TheresaS, MollyT, LilyWM, JoshuaW";
 var d = "BittyA, AldenC, EveC, AbigailD, AndrewF, AlyanaH, ChanceJ, IsabelleJ, OliviaM, AbigailM, SeanN, AdareO, MagnoliaR, AldenS, NatalieS, DavisT, TrevorW, MackenzieY";
 var f = "ZayneA, EvanA, LillyB, CharlotteC, MichaelC, HaleighC, JoshuaD, TylerG, BlakeH, LillyH, SamM, MargaretO, ElizabethP, ErykR, JohnS, OwenS, HaleyS, GunnarW";
