@@ -13,7 +13,6 @@ var url = window.location.href;
       if (Teachers[i]==captured){
         console.log("Teacher: "+captured);
         inList =true;
-         $("#titleText").innerHTML(captured+ " Randomizer");
         break;
       }
 }
@@ -30,7 +29,7 @@ var h = "NicholasB, TristinB, ChristianB, SilasB, LukeB, LolaD, AudreyE, SofiaK,
 var theGroupSize = 1;
 
 $(document).ready(function() {
-
+         $("#titleText").text(captured+ " Randomizer");
       $('#blockSelector').on('change', function() {
 
         // populate textarea with premade student lists
