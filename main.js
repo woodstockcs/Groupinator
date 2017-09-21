@@ -20,11 +20,11 @@ if (!inList){
         console.log("Teacher is not in List");
 
 }
-var b = "HawleyB, HeatherB, OwenC, OrionC, MatthewF, AnthonyH, EricaK, KayleeL, MasonP, TheresaS, MollyT, LilyWM, JoshuaW";
-var d = "BittyA, AldenC, EveC, AbigailD, AndrewF, AlyanaH, ChanceJ, IsabelleJ, OliviaM, AbigailM, SeanN, AdareO, MagnoliaR, AldenS, NatalieS, DavisT, TrevorW, MackenzieY";
-var f = "ZayneA, EvanA, LillyB, CharlotteC, MichaelC, HaleighC, JoshuaD, TylerG, BlakeH, LillyH, SamM, MargaretO, ElizabethP, ErykR, JohnS, OwenS, HaleyS, GunnarW";
-var g = "CharlieA, BenjaminB, ElyC, HannahC, WillC, ElijahD, IssacE, AdriannaG, AnnaH, CassandraH, ClaytonL, ClaudiaM, HayleyM, DharmaN, AlecP, IvyR, TimothyR, OwenT, GriffinVN";
-var h = "NicholasB, TristinB, ChristianB, SilasB, LukeB, LolaD, AudreyE, SofiaK, DaneilL, JosephM, CalebM, TravonO, MollieP, MaceyP, MadisenR, AliceS, AnnaW, SamanthaY, NoraZ";
+var b = "CharlieA, RhiannonB, MackenzieB, MomoB, OliviaB, DanaC, TierneyD, MattE, AlexF, AdriannaG, LineaK, TeddyK, JacobM, NeilD, HarrisonN, AvaP, AlecP, ClarissaP, TimothyR, KatherineS, JessV";
+var d = "AngelinaA, MorganB, BenB, SavannahC, ClaireC, MattF, KyleGW, NatalieH, MadelineH, WadeH, ChloeN, SidP, MicahS, RudyT, AlexaT, OliverW";
+var e = "PeterB, TobyB, KharaB, WillC, MaxD, AudreyE, AnnaH, KateM, GabeM, OliviaM, MinP, AlexR, GinaS, MollyT, LilyWM";
+var f = "JulianaB, KatrinaB, AllisonB, LukeB, HannahC, OwenC, EmilyD, HenryG, SofiaK, HayleyM, TaylorP, MinP, RileyQ, EvanS, AldenS, GunnarW";
+var g = "BittyA, NoahA, GabeB, SavannahC, ClaireC, AudreyE, AsaG, CarlG, NatalieH, LydiaH, AllisonL, ClayL, ClaudiaM, LouisM, ZoeN, MaggieP, SamP, AliceS, DavisT, AaronW";
 
 var theGroupSize = 1;
 
