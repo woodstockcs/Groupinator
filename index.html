@@ -6,7 +6,7 @@
 
 <head>
 
-    <title>VoRandomizer</title>
+    <title>Randomizer</title>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -149,7 +149,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container-fluid" id="main-navbar">
             <div class="navbar-form navbar-left">
-                <span id="titleText">Vonada Randomizer</span>
+                <span id="titleText">Randomizer</span>
             </div>
             <div class="btn-group navbar-form navbar-right" id="rightNavElements">
               <!--
@@ -164,7 +164,7 @@
 
     <div id="errorContainer" class="container hidden">
         <br><br>
-        <div id="errorBox" class="alert alert-danger" role="alert">General ERROR. Contact andrew.smith@tomtom.com</div>
+        <div id="errorBox" class="alert alert-danger" role="alert">General ERROR. Contact andrewsmith@wcsu.net</div>
     </div>
     <br>
     <form>
@@ -172,9 +172,10 @@
     <option disabled="disabled" selected="selected" value"x">Choose a Block</option>
   <option value="b">B Block</option>
   <option value="d">D Block</option>
+  <option value="e">E Block</option>
   <option value="f">F Block</option>
   <option value="g">G Block</option>
-    <option value="h">H Block</option>
+
 </select>
 &nbsp;&nbsp;<select id="sizeSelector">
 <option disabled="disabled" selected="selected" value"x">Choose a Size</option>
@@ -186,7 +187,7 @@
 </form>
 <br>
 <br>
-    &nbsp;&nbsp;<textarea cols="100" id="allStudents" placeholder="Good Morning Mrs Vonada! enter students or select a block!"></textarea>
+    &nbsp;&nbsp;<textarea cols="100" id="allStudents" placeholder="Hello -- select a block!"></textarea>
     <br><br>&nbsp;&nbsp;<button class="btn btn-default" onClick="createGroups();"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> Groupify!</button>
     <br><br><div class="container-fluid">
         <table class="table table-hover" id="ruleTable">
