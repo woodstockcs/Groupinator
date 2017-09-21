@@ -2,7 +2,7 @@ var ruleList_final = [];
 var ruleList_raw = [];
 var baseurl = 'http://rms.tomtomgroup.com/';
 var skiplist = [];
-var url = "https://woodstockcs.github.io/VoRandomizer/teacher=TeachMe";
+var url = window.location.href;
     var captured = /teacher=([^&]+)/.exec(url)[1]; // Value is in [1] ('384' in our case)
     var result = captured ? captured :'my Default Value' ;
     var Teachers= ["Poublon", "Bremel", "Vonada", "Smith", "Gulian"];
