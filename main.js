@@ -40,14 +40,14 @@ $(document).ready(function() {
             case "d":
               $("#allStudents").text(d);
               break;
+            case "e":
+              $("#allStudents").text(e);
+              break;
             case "f":
               $("#allStudents").text(f);
               break;
             case "g":
               $("#allStudents").text(g);
-              break;
-            case "h":
-              $("#allStudents").text(h);
               break;
         }
 
