@@ -13,6 +13,7 @@ var url = window.location.href;
       if (Teachers[i]==captured){
         console.log("Teacher: "+captured);
         inList =true;
+         $("#titleText").text(b);
         break;
       }
 }
