@@ -20,11 +20,54 @@ if (!inList){
         console.log("Teacher is not in List");
 
 }
-var b = "CharlieA, RhiannonB, MackenzieB, MomoB, OliviaB, DanaC, TierneyD, MattE, AlexF, AdriannaG, LineaK, TeddyK, JacobM, NeilD, HarrisonN, AvaP, AlecP, ClarissaP, TimothyR, KatherineS, JessV";
-var d = "AngelinaA, MorganB, BenB, SavannahC, ClaireC, MattF, KyleGW, NatalieH, MadelineH, WadeH, ChloeN, SidP, MicahS, RudyT, AlexaT, OliverW";
-var e = "PeterB, TobyB, KharaB, WillC, MaxD, AudreyE, AnnaH, KateM, GabeM, OliviaM, MinP, AlexR, GinaS, MollyT, LilyWM";
-var f = "JulianaB, KatrinaB, AllisonB, LukeB, HannahC, OwenC, EmilyD, HenryG, SofiaK, HayleyM, TaylorP, MinP, RileyQ, EvanS, AldenS, GunnarW";
-var g = "BittyA, NoahA, GabeB, SavannahC, ClaireC, AudreyE, AsaG, CarlG, NatalieH, LydiaH, AllisonL, ClayL, ClaudiaM, LouisM, ZoeN, MaggieP, SamP, AliceS, DavisT, AaronW";
+
+var allClasses = [];
+
+
+$.get('sampleText.txt', function(data) {
+   processData(data);
+}, 'text');
+
+function findTeacher(classList,teacherName){
+ var teacherList=[];
+ for(var i=0; i<classList.length; i++){
+   if(classList[i][0]==teacherName){
+     teacherList[teacherList.length]=classList[i];
+   }
+ }
+ return teacherList;
+
+}
+
+function findBlock(sortedClassList,block){
+  for(var i=0; i<sortedClassList.length; i++){
+    if(sortedClassList[i][1]==block){
+      return sortedClassList[i];
+    }
+  }
+}
+
+
+
+function processData(textFile){
+
+  var allTextLines = textFile.split(/\r\n|\n/);
+
+
+  console.log(allTextLines.length);
+ for (var i = 0; i <allTextLines.length-1 ; i++) {
+   var entries = allTextLines[i].split(', ');
+
+      allClasses[allClasses.length]=[entries[0],entries[1],entries.slice(2,entries.length)];
+
+
+}
+
+var teacherList=(findTeacher(allClasses, captured));
+
+
+}
+
 
 var theGroupSize = 1;
 
@@ -34,25 +77,34 @@ $(document).ready(function() {
 
         // populate textarea with premade student lists
         switch (this.value) {
+            case "a":
+                var workingClass= findBlock(teacherlist,"a");
+                break;
             case "b":
-              $("#allStudents").text(b);
-              break;
+                var workingClass= findBlock(teacherlist,"a");
+                break;
+            case "c": 
+                 var workingClass= findBlock(teacherlist,"a");  
+                break;
             case "d":
-              $("#allStudents").text(d);
+                 var workingClass= findBlock(teacherlist,"a");
               break;
             case "e":
-              $("#allStudents").text(e);
+                 var workingClass= findBlock(teacherlist,"a");
               break;
             case "f":
-              $("#allStudents").text(f);
+                   var workingClass= findBlock(teacherlist,"a");
               break;
             case "g":
-              $("#allStudents").text(g);
+               var workingClass= findBlock(teacherlist,"a");
               break;
+            case "h":
+                var workingClass= findBlock(teacherlist,"a");
+                break;
         }
 
       })
-
+       $("#allStudents").text(workingclass,toString());
       $('#sizeSelector').on('change', function() {
 
         // grab group size
