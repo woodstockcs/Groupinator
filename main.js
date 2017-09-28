@@ -78,28 +78,28 @@ $(document).ready(function() {
         // populate textarea with premade student lists
         switch (this.value) {
             case "a":
-                var workingClass= findBlock(teacherlist,"a");
+                var workingClass= findBlock(teacherList,"a");
                 break;
             case "b":
-                var workingClass= findBlock(teacherlist,"b");
+                var workingClass= findBlock(teacherList,"b");
                 break;
             case "c": 
-                 var workingClass= findBlock(teacherlist,"c");  
+                 var workingClass= findBlock(teacherList,"c");  
                 break;
             case "d":
-                 var workingClass= findBlock(teacherlist,"d");
+                 var workingClass= findBlock(teacherList,"d");
               break;
             case "e":
-                 var workingClass= findBlock(teacherlist,"e");
+                 var workingClass= findBlock(teacherList,"e");
               break;
             case "f":
-                   var workingClass= findBlock(teacherlist,"f");
+                   var workingClass= findBlock(teacherList,"f");
               break;
             case "g":
-               var workingClass= findBlock(teacherlist,"g");
+               var workingClass= findBlock(teacherList,"g");
               break;
             case "h":
-                var workingClass= findBlock(teacherlist,"h");
+                var workingClass= findBlock(teacherList,"h");
                 break;
         }
 
