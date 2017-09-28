@@ -24,7 +24,7 @@ if (!inList){
 var allClasses = [];
 
 
-$.get('sampleText.txt', function(data) {
+$.get('Classdata.txt', function(data) {
    processData(data);
 }, 'text');
 
