@@ -65,7 +65,7 @@ function processData(textFile){
 
 var teacherList=(findTeacher(allClasses, captured));
 console.log("teacherList:"+teacherList);
- var daddy=findBlock(teacherList,"b");
+ var daddy=findBlock(findTeacher(allClasses, captured),"b");
  console.log("daddy: "+daddy);
 
 }
