@@ -70,7 +70,7 @@ var teacherList=(findTeacher(allClasses, captured));
 
 
 var theGroupSize = 1;
-
+var workingClass=[];
 $(document).ready(function() {
          $("#titleText").text(captured+ " Randomizer");
       $('#blockSelector').on('change', function() {
@@ -81,30 +81,31 @@ $(document).ready(function() {
                 var workingClass= findBlock(teacherlist,"a");
                 break;
             case "b":
-                var workingClass= findBlock(teacherlist,"a");
+                var workingClass= findBlock(teacherlist,"b");
                 break;
             case "c": 
-                 var workingClass= findBlock(teacherlist,"a");  
+                 var workingClass= findBlock(teacherlist,"c");  
                 break;
             case "d":
-                 var workingClass= findBlock(teacherlist,"a");
+                 var workingClass= findBlock(teacherlist,"d");
               break;
             case "e":
-                 var workingClass= findBlock(teacherlist,"a");
+                 var workingClass= findBlock(teacherlist,"e");
               break;
             case "f":
-                   var workingClass= findBlock(teacherlist,"a");
+                   var workingClass= findBlock(teacherlist,"f");
               break;
             case "g":
-               var workingClass= findBlock(teacherlist,"a");
+               var workingClass= findBlock(teacherlist,"g");
               break;
             case "h":
-                var workingClass= findBlock(teacherlist,"a");
+                var workingClass= findBlock(teacherlist,"h");
                 break;
         }
 
       })
-       $("#allStudents").text(workingclass,toString());
+       var workingClass2= workingClass.slice(2,(workingClass.length-1));
+       $("#allStudents").text(workingClass2.toString());
       $('#sizeSelector').on('change', function() {
 
         // grab group size
