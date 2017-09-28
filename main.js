@@ -64,7 +64,7 @@ function processData(textFile){
 }
 
 var teacherList=(findTeacher(allClasses, captured));
-
+console.log("teacherList:"+teacherList);
 
 }
 
