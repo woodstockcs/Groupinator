@@ -2,6 +2,8 @@ var ruleList_final = [];
 var ruleList_raw = [];
 var baseurl = 'http://rms.tomtomgroup.com/';
 var skiplist = [];
+var teacherList=[];
+var allClasses = [];
 var url = window.location.href;
     var captured = /teacher=([^&]+)/.exec(url)[1]; // Value is in [1] ('384' in our case)
     var result = captured ? captured :'my Default Value' ;
@@ -20,40 +22,99 @@ if (!inList){
         console.log("Teacher is not in List");
 
 }
-var b = "CharlieA, RhiannonB, MackenzieB, MomoB, OliviaB, DanaC, TierneyD, MattE, AlexF, AdriannaG, LineaK, TeddyK, JacobM, NeilD, HarrisonN, AvaP, AlecP, ClarissaP, TimothyR, KatherineS, JessV";
-var d = "AngelinaA, MorganB, BenB, SavannahC, ClaireC, MattF, KyleGW, NatalieH, MadelineH, WadeH, ChloeN, SidP, MicahS, RudyT, AlexaT, OliverW";
-var e = "PeterB, TobyB, KharaB, WillC, MaxD, AudreyE, AnnaH, KateM, GabeM, OliviaM, MinP, AlexR, GinaS, MollyT, LilyWM";
-var f = "JulianaB, KatrinaB, AllisonB, LukeB, HannahC, OwenC, EmilyD, HenryG, SofiaK, HayleyM, TaylorP, MinP, RileyQ, EvanS, AldenS, GunnarW";
-var g = "BittyA, NoahA, GabeB, SavannahC, ClaireC, AudreyE, AsaG, CarlG, NatalieH, LydiaH, AllisonL, ClayL, ClaudiaM, LouisM, ZoeN, MaggieP, SamP, AliceS, DavisT, AaronW";
+
+
+
+
+$.get('Classdata.txt', function(data) {
+   processData(data);
+}, 'text');
+
+function findTeacher(classList,teacherName){
+ var teacherList=[];
+ for(var i=0; i<classList.length; i++){
+   if(classList[i][0]==teacherName){
+     teacherList[teacherList.length]=classList[i];
+   }
+ }
+ return teacherList;
+
+}
+
+function findBlock(sortedClassList,block){
+  for(var i=0; i<sortedClassList.length; i++){
+    if(sortedClassList[i][1]==block){
+      return sortedClassList[i];
+    }
+  }
+}
+
+
+
+function processData(textFile){
+
+  var allTextLines = textFile.split(/\r\n|\n/);
+
+
+
+ for (var i = 0; i <allTextLines.length-1 ; i++) {
+   var entries = allTextLines[i].split(', ');
+
+      allClasses[allClasses.length]=[entries[0],entries[1],entries.slice(2,entries.length)];
+
+
+}
+
+teacherList=(findTeacher(allClasses, captured));
+
+
+}
+
 
 var theGroupSize = 1;
-
+var workingClass=[];
 $(document).ready(function() {
          $("#titleText").text(captured+ " Randomizer");
       $('#blockSelector').on('change', function() {
 
         // populate textarea with premade student lists
         switch (this.value) {
+
+            case "a":
+                var workingClass= findBlock(teacherList,"A");
+                break;
             case "b":
-              $("#allStudents").text(b);
-              break;
+                var workingClass= findBlock(teacherList,"B");
+                break;
+            case "c":
+                 var workingClass= findBlock(teacherList,"B");
+                break;
             case "d":
-              $("#allStudents").text(d);
+                 var workingClass= findBlock(teacherList,"D");
               break;
             case "e":
-              $("#allStudents").text(e);
+                 var workingClass= findBlock(teacherList,"E");
               break;
             case "f":
-              $("#allStudents").text(f);
+                   var workingClass= findBlock(teacherList,"F");
               break;
             case "g":
-              $("#allStudents").text(g);
+               var workingClass= findBlock(teacherList,"G");
               break;
+            case "h":
+                var workingClass= findBlock(teacherList,"H");
+                break;
         }
 
-      })
+        console.log(workingClass);
 
+
+       var workingClass2= workingClass.slice(2,(workingClass.length));
+       console.log(workingClass2);
+       $("#allStudents").text(workingClass2.toString());
+       })
       $('#sizeSelector').on('change', function() {
+
 
         // grab group size
         switch (this.value) {
@@ -143,7 +204,7 @@ function createGroups() {
     }
     // not sure what's going on
     else if (theStudentCount % theGroupSize > theStudentCount / theGroupSize) {
-        alert("OH NO - Tierney Crisis Mode - select a smaller group size - RIP");
+        alert("OH NO - Select a smaller group size - RIP");
     }
     // uneven distribution
     else {
@@ -169,63 +230,37 @@ function createGroups() {
     }
     console.log(theGroups);
 
-    var t = $('#ruleTable').DataTable({
-        paging: false,
-        ordering: false,
-        autoWidth: false,
-        retrieve: true,
-        language: {
-            "info": "Showing _TOTAL_ rules",
-            "infoFiltered": "(filtered from full set of _MAX_ rules)",
-            "emptyTable": " "
-        },
-        order: [
-            [0, "asc"]
-        ],
-        dom: 'lrtp'
-    });
 
-    t.clear();
-    $.each(theGroups, function(index, item) {
-        console.log('rule:', item);
-        if (item[0])
-        {
-        t.row.add([
-            index + 1,
-            stringify(item)
-        ]);
-      }
-    })
-    t.draw();
 
+  var t = $('#ruleTable').DataTable({
+    paging: false,
+    ordering: false,
+    autoWidth: false,
+    retrieve: true,
+    language: {
+        "info": "Showing _TOTAL_ rules",
+        "infoFiltered": "(filtered from full set of _MAX_ rules)",
+        "emptyTable": " "
+    },
+    order: [
+        [0, "asc"]
+    ],
+    dom: 'lrtp'
+});
+
+t.clear();
+$.each(theGroups, function(index, item) {
+    console.log('rule:', item);
+    if (item[0])
+    {
+    t.row.add([
+        index + 1,
+        stringify(item)
+    ]);
+  }
+})
+t.draw();
 }
-//
-//       for (int i = 0; i < students.length % scannerResponse; i++) { // iterate through the spillover
-//
-//         int firstEmptySpot = 0;
-//         //System.out.println(groups[i % (students.length/scannerResponse)][firstEmptySpot]);
-//
-//          while (groups[i % (students.length/scannerResponse)][firstEmptySpot] != null) {
-//            firstEmptySpot++;
-//         }
-//
-//
-//         groups[i % (students.length/scannerResponse)][firstEmptySpot]=students[students.length-i-1];
-//
-//         //add spillover
-//         }
-//
-//
-// for (int j = 0; j < groups.length; j++) {
-//               System.out.println("group"+ (j+1));
-//               for (int k = 0; k < groups[j].length; k++){
-//                 System.out.println( groups[j][k]);
-//        }
-//       }
-//     }
-//   }
-// }
-
 
 
 function stringify(lst) {
@@ -254,115 +289,3 @@ function repositionBody() {
 function displayFailure() {
     alert("There's a problem. Please send an email to andrewsmith@wcsu.net");
 }
-//
-// function printRules() {
-//     var t = $('#ruleTable').DataTable({
-//         paging: false,
-//         ordering: true,
-//         autoWidth: false,
-//         language: {
-//             "info": "Showing _TOTAL_ rules",
-//             "infoFiltered": "(filtered from full set of _MAX_ rules)",
-//             "emptyTable": "...loading..."
-//         },
-//         order: [[0, "asc"]],
-//         dom: 'lrtp'
-//     });
-//
-//     $('#search').on( 'keyup', function () {
-//         t.search( this.value ).draw();
-//         info = t.page.info();
-//         if(info.recordsDisplay < info.recordsTotal) {
-//             $("#filterCount").html('<span class="warning">Displaying <b>' + info.recordsDisplay + '</b> of ' + info.recordsTotal + ' active rules</span>');
-//         } else {
-//             $("#filterCount").text('Displaying all ' + info.recordsTotal + ' active rules');
-//         }
-//         if (info.recordsTotal == 0) {
-//             $("td:contains('...loading...')").html('no items')
-//         };
-//         repositionBody()
-//     } );
-//
-//         $.each(theGroups, function(index, item) {
-//             console.log('rule:', item);
-//                 t.row.add([
-//                   index + 1,
-//                     item
-//
-//                 ]);
-//                           }
-//                         )
-//
-//         console.log('done adding table items');
-//         t.draw();
-//         info = t.page.info();
-//         $("#ruleCount").text('Rule count: ' + info.recordsTotal);
-//         if (info.recordsTotal == 0) {
-//             $("td:contains('...loading...')").html('no items')
-//         };
-//         $("#filterCount").text('Displaying all ' + info.recordsTotal + ' active rules');
-//         repositionBody()
-//
-// }
-//
-// function removeBadCharFromString(str) {
-//     var newStr = str.replace(/\uFFFD/g, ' ');
-//     return newStr;
-// }
-//
-// function removeBadCharFromArray(arr) {
-//     for (var i in arr) {
-//         i = removeBadCharFromString(i);
-//     }
-//     return arr;
-// }
-//
-// function getNcLinkString(input) {
-//    if ($.isNumeric(input) && input.length >= 6 && input.length <= 7) {
-//        output = '<a href="http://prod-mks-app-101:7001/im/issues?selection=' + input + '" target="_blank">' +  input + '</a>';
-//    } else {
-//        output = input;
-//        console.log('unexpected NC ID:' + input);
-//    }
-//    return output;
-// }
-//
-// function getQaLinkString(input) {
-//    output = ''
-//    if (input) {
-//        if (input.length >= 5) {
-//            rules = input.split(' ');
-//            $.each(rules, function(key, value) {
-//                if ($.isNumeric(value) && value >= 50001 &&  value <= 59999) {
-//                    output = output + '<a href="http://rms.tomtomgroup.com/rms-web/wicket/bookmarkable/com.tomtom.rms.module.rule.RuleDetailPage?id=' + value + '" target="_blank">' +  value + '</a> ';
-//                } else {
-//                    output = output + value + ' ';
-//                    console.log('unexpected QA ID: ' + value + ' in "' + input + '"');
-//                }
-//            });
-//        } else {
-//            output = input
-//            console.log('unexpected QA ID:' + input);
-//        }
-//    } else {
-//        console.log('unexpected QA ID:' + input);
-//    }
-//    return output;
-// }
-//
-// function linkify(str) {
-//     if (str.substring(0,4) == 'http') {
-//         newstr = '<a href="http://rms.tomtomgroup.com/rms-web/wicket/bookmarkable/com.tomtom.rms.module.rule.RuleDetailPage?id=' + str + '" target="_blank">' + str + '</a>';
-//     } else {
-//         newstr = str;
-//     }
-//     return newstr
-// }
-//
-// function getMessage(id) {
-//     // console.log(latestVersions.length);
-//     rule = $.grep(latestVersions, function (item, index) {
-//         return item.id.toString() == id.toString();
-//     })
-//     return rule[0].message;
-// }
