@@ -204,7 +204,7 @@ function createGroups() {
     }
     // not sure what's going on
     else if (theStudentCount % theGroupSize > theStudentCount / theGroupSize) {
-        alert("OH NO - Tierney Crisis Mode - select a smaller group size - RIP");
+        alert("OH NO - Select a smaller group size - RIP");
     }
     // uneven distribution
     else {
