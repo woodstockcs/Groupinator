@@ -2,6 +2,8 @@ var ruleList_final = [];
 var ruleList_raw = [];
 var baseurl = 'http://rms.tomtomgroup.com/';
 var skiplist = [];
+var teacherList=[];
+var allClasses = [];
 var url = window.location.href;
     var captured = /teacher=([^&]+)/.exec(url)[1]; // Value is in [1] ('384' in our case)
     var result = captured ? captured :'my Default Value' ;
@@ -21,7 +23,7 @@ if (!inList){
 
 }
 
-var allClasses = [];
+
 
 
 $.get('Classdata.txt', function(data) {
@@ -54,7 +56,7 @@ function processData(textFile){
   var allTextLines = textFile.split(/\r\n|\n/);
 
 
-  console.log(allTextLines.length);
+
  for (var i = 0; i <allTextLines.length-1 ; i++) {
    var entries = allTextLines[i].split(', ');
 
@@ -63,10 +65,8 @@ function processData(textFile){
 
 }
 
-var teacherList=(findTeacher(allClasses, captured));
-console.log("teacherList:"+teacherList);
- var daddy=(findBlock(findTeacher(allClasses, captured)," B"));
- console.log("daddy: "+daddy);
+teacherList=(findTeacher(allClasses, captured));
+
 
 }
 
@@ -79,36 +79,42 @@ $(document).ready(function() {
 
         // populate textarea with premade student lists
         switch (this.value) {
+
             case "a":
-                var workingClass= findBlock(teacherList,"a");
+                var workingClass= findBlock(teacherList,"A");
                 break;
             case "b":
-                var workingClass= findBlock(teacherList,"b");
+                var workingClass= findBlock(teacherList,"B");
                 break;
-            case "c": 
-                 var workingClass= findBlock(teacherList,"c");  
+            case "c":
+                 var workingClass= findBlock(teacherList,"B");
                 break;
             case "d":
-                 var workingClass= findBlock(teacherList,"d");
+                 var workingClass= findBlock(teacherList,"D");
               break;
             case "e":
-                 var workingClass= findBlock(teacherList,"e");
+                 var workingClass= findBlock(teacherList,"E");
               break;
             case "f":
-                   var workingClass= findBlock(teacherList,"f");
+                   var workingClass= findBlock(teacherList,"F");
               break;
             case "g":
-               var workingClass= findBlock(teacherList,"g");
+               var workingClass= findBlock(teacherList,"G");
               break;
             case "h":
-                var workingClass= findBlock(teacherList,"h");
+                var workingClass= findBlock(teacherList,"H");
                 break;
         }
 
-      })
-       var workingClass2= workingClass.slice(2,(workingClass.length-1));
+        console.log(workingClass);
+
+
+       var workingClass2= workingClass.slice(2,(workingClass.length));
+       console.log(workingClass2);
        $("#allStudents").text(workingClass2.toString());
+       })
       $('#sizeSelector').on('change', function() {
+
 
         // grab group size
         switch (this.value) {
@@ -224,63 +230,37 @@ function createGroups() {
     }
     console.log(theGroups);
 
-    var t = $('#ruleTable').DataTable({
-        paging: false,
-        ordering: false,
-        autoWidth: false,
-        retrieve: true,
-        language: {
-            "info": "Showing _TOTAL_ rules",
-            "infoFiltered": "(filtered from full set of _MAX_ rules)",
-            "emptyTable": " "
-        },
-        order: [
-            [0, "asc"]
-        ],
-        dom: 'lrtp'
-    });
 
-    t.clear();
-    $.each(theGroups, function(index, item) {
-        console.log('rule:', item);
-        if (item[0])
-        {
-        t.row.add([
-            index + 1,
-            stringify(item)
-        ]);
-      }
-    })
-    t.draw();
 
+  var t = $('#ruleTable').DataTable({
+    paging: false,
+    ordering: false,
+    autoWidth: false,
+    retrieve: true,
+    language: {
+        "info": "Showing _TOTAL_ rules",
+        "infoFiltered": "(filtered from full set of _MAX_ rules)",
+        "emptyTable": " "
+    },
+    order: [
+        [0, "asc"]
+    ],
+    dom: 'lrtp'
+});
+
+t.clear();
+$.each(theGroups, function(index, item) {
+    console.log('rule:', item);
+    if (item[0])
+    {
+    t.row.add([
+        index + 1,
+        stringify(item)
+    ]);
+  }
+})
+t.draw();
 }
-//
-//       for (int i = 0; i < students.length % scannerResponse; i++) { // iterate through the spillover
-//
-//         int firstEmptySpot = 0;
-//         //System.out.println(groups[i % (students.length/scannerResponse)][firstEmptySpot]);
-//
-//          while (groups[i % (students.length/scannerResponse)][firstEmptySpot] != null) {
-//            firstEmptySpot++;
-//         }
-//
-//
-//         groups[i % (students.length/scannerResponse)][firstEmptySpot]=students[students.length-i-1];
-//
-//         //add spillover
-//         }
-//
-//
-// for (int j = 0; j < groups.length; j++) {
-//               System.out.println("group"+ (j+1));
-//               for (int k = 0; k < groups[j].length; k++){
-//                 System.out.println( groups[j][k]);
-//        }
-//       }
-//     }
-//   }
-// }
-
 
 
 function stringify(lst) {
@@ -309,115 +289,3 @@ function repositionBody() {
 function displayFailure() {
     alert("There's a problem. Please send an email to andrewsmith@wcsu.net");
 }
-//
-// function printRules() {
-//     var t = $('#ruleTable').DataTable({
-//         paging: false,
-//         ordering: true,
-//         autoWidth: false,
-//         language: {
-//             "info": "Showing _TOTAL_ rules",
-//             "infoFiltered": "(filtered from full set of _MAX_ rules)",
-//             "emptyTable": "...loading..."
-//         },
-//         order: [[0, "asc"]],
-//         dom: 'lrtp'
-//     });
-//
-//     $('#search').on( 'keyup', function () {
-//         t.search( this.value ).draw();
-//         info = t.page.info();
-//         if(info.recordsDisplay < info.recordsTotal) {
-//             $("#filterCount").html('<span class="warning">Displaying <b>' + info.recordsDisplay + '</b> of ' + info.recordsTotal + ' active rules</span>');
-//         } else {
-//             $("#filterCount").text('Displaying all ' + info.recordsTotal + ' active rules');
-//         }
-//         if (info.recordsTotal == 0) {
-//             $("td:contains('...loading...')").html('no items')
-//         };
-//         repositionBody()
-//     } );
-//
-//         $.each(theGroups, function(index, item) {
-//             console.log('rule:', item);
-//                 t.row.add([
-//                   index + 1,
-//                     item
-//
-//                 ]);
-//                           }
-//                         )
-//
-//         console.log('done adding table items');
-//         t.draw();
-//         info = t.page.info();
-//         $("#ruleCount").text('Rule count: ' + info.recordsTotal);
-//         if (info.recordsTotal == 0) {
-//             $("td:contains('...loading...')").html('no items')
-//         };
-//         $("#filterCount").text('Displaying all ' + info.recordsTotal + ' active rules');
-//         repositionBody()
-//
-// }
-//
-// function removeBadCharFromString(str) {
-//     var newStr = str.replace(/\uFFFD/g, ' ');
-//     return newStr;
-// }
-//
-// function removeBadCharFromArray(arr) {
-//     for (var i in arr) {
-//         i = removeBadCharFromString(i);
-//     }
-//     return arr;
-// }
-//
-// function getNcLinkString(input) {
-//    if ($.isNumeric(input) && input.length >= 6 && input.length <= 7) {
-//        output = '<a href="http://prod-mks-app-101:7001/im/issues?selection=' + input + '" target="_blank">' +  input + '</a>';
-//    } else {
-//        output = input;
-//        console.log('unexpected NC ID:' + input);
-//    }
-//    return output;
-// }
-//
-// function getQaLinkString(input) {
-//    output = ''
-//    if (input) {
-//        if (input.length >= 5) {
-//            rules = input.split(' ');
-//            $.each(rules, function(key, value) {
-//                if ($.isNumeric(value) && value >= 50001 &&  value <= 59999) {
-//                    output = output + '<a href="http://rms.tomtomgroup.com/rms-web/wicket/bookmarkable/com.tomtom.rms.module.rule.RuleDetailPage?id=' + value + '" target="_blank">' +  value + '</a> ';
-//                } else {
-//                    output = output + value + ' ';
-//                    console.log('unexpected QA ID: ' + value + ' in "' + input + '"');
-//                }
-//            });
-//        } else {
-//            output = input
-//            console.log('unexpected QA ID:' + input);
-//        }
-//    } else {
-//        console.log('unexpected QA ID:' + input);
-//    }
-//    return output;
-// }
-//
-// function linkify(str) {
-//     if (str.substring(0,4) == 'http') {
-//         newstr = '<a href="http://rms.tomtomgroup.com/rms-web/wicket/bookmarkable/com.tomtom.rms.module.rule.RuleDetailPage?id=' + str + '" target="_blank">' + str + '</a>';
-//     } else {
-//         newstr = str;
-//     }
-//     return newstr
-// }
-//
-// function getMessage(id) {
-//     // console.log(latestVersions.length);
-//     rule = $.grep(latestVersions, function (item, index) {
-//         return item.id.toString() == id.toString();
-//     })
-//     return rule[0].message;
-// }
