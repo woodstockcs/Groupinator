@@ -42,6 +42,7 @@ function findTeacher(classList,teacherName){
 }
 
 function findBlock(sortedClassList,block){
+
   for(var i=0; i<sortedClassList.length; i++){
     if(sortedClassList[i][1]==block){
       return sortedClassList[i];
@@ -87,7 +88,7 @@ $(document).ready(function() {
                 var workingClass= findBlock(teacherList,"B");
                 break;
             case "c":
-                 var workingClass= findBlock(teacherList,"B");
+                 var workingClass= findBlock(teacherList,"C");
                 break;
             case "d":
                  var workingClass= findBlock(teacherList,"D");
