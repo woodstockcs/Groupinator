@@ -7,7 +7,7 @@ var allClasses = [];
 var url = window.location.href;
     var captured = /teacher=([^&]+)/.exec(url)[1]; // Value is in [1] ('384' in our case)
     var result = captured ? captured :'my Default Value' ;
-    var Teachers= ["Poublon", "Bremel", "Vonada", "Smith", "Gulian"];
+    var Teachers= ["Poublon", "Bremel", "Vonada", "Smith", "Gulian", "DeCuollo"];
     var inList= false ;
     for (var i = 0; i < Teachers.length; i++){
       // console.log("Teacher: "+captured);
