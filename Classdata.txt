@@ -16,7 +16,5 @@ Vonada, C, EricB, LiamB, LilyB, QuinnG, NathanialG, KailynG, SkylarH, CooperJ, M
 Vonada, D, NickB, TristinB, PeterB, DanaC, MaximillianD, AddieG, WilliamH, GabeM, HarrisonM, ErykR, KatherineS, JackW, SamanthaY, MinP
 Vonada, E, Thomas, Heather, Lily, Tobin, Michael, Haleigh, Novah, Daniel, Micah, Molly, Abigail, Hugo, Macey, Laura, Cassandra, Paige, Ali, Field, Hawley
 Vonada, F, HaileyB, CeliaB, HunterC, ElizaD, AlexanderI, BrinleyJ, MeganL, LilliaM, JacobM, IzabellaM, MadisonN, LauraS, AvariS, LiliannaS, EleanoreS, OonaT, MadelynT, LillieT, LauraW
-Vonada, H, Nina, Cooper, ColbyE, Matthew, Ian, Broc, Skylar, Max, ColbyH, Evan, Carolyn, Nixon, Rei, Genevieve, Wyatt, Otto, Hannah, Alex, ℕ𝕒𝕥𝕖, Ali, Emma, CharlesG
-DeCuollo, A, HeidiA, LilyB, HaileyC, EmilyD, CooperD, NoraD, IanG, ArianaG, MackenzieH, KellanJ 
-DeCuollo, E, WyattB, NinaB, LiamB, ChaseC, HayleyD, JuneD, ColbyE, KatrinaF, BrocH, KellyJ, EvanJ, CooperJ, LillyK, EvanK, CarolynL, OttoN, AdrianaP, MeredithR, RyanRog, RyanRun, JoeS, LaraT, KendallT, GordonTS, KaitlynW, CoreyW, AriaY
-DeCuollo, F, MemphisB, EricB, BritneyB, JacksonC, ClaudiaD, MatthewE, KipG, QuinnG, SkylarH, ColbyH, RyanL, HannahL, BrightonMT, AbigalM, AliciaM, ReeseP, EndineP, HannahR, GraceS, TaylorS, DanielleS, AnaeT, GraceW, AdeleineW
+Vonada, H, Nina, Cooper, ColbyE, Matthew, Ian, Broc, Skylar, Max, ColbyH, Evan, Carolyn, Nixon, Rei, Genevieve, Wyatt, Otto, Hannah, Alex, Nate, Ali, Emma, CharlesG
+DeCuollo, A, HeidiA, LilyB, HaileyC, EmilyD, CooperD, NoraD, IanG, ArianaG, MackenzieH, KellanJ, JaneL, NicholasL, NixonM, JacksonM, BronwynM, MorganM, SophieN, AlixxP, KeatonP, SeamusS, EmmaT, AmandaV, ZoeW, SophiaY, KeiraZ
