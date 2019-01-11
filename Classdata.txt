@@ -21,5 +21,3 @@ DeCuollo, A, HeidiA, LilyB, HaileyC, EmilyD, CooperD, NoraD, IanG, ArianaG, Mack
 DeCuollo, B, DustinB, TaylorB, ScathachD, WilliamD, NicoleF, NathanialG, MaxH, LiamH, GabrielleH, MeridianJ, RobertM, EmmetM, EliM, GenevieveM, WyattN, AnyaO, HannahO, OwenQ, AlexanderR, NateS, MariaS, MeganT, YehevaW, EmmaW, DevinZ
 DeCuollo, E, WyattB, NinaB, LiamB, ChaseC, HayleyD, JuneD, ColbyE, KatrinaF, BrocH, KellyJ, EvanJ, CooperJ, LillyK, EvanK, CarolynL, OttoN, AdrianaP, MeredithR, RyanRog, RyanRun, JoeS, LaraT, KendallT, GordonTS, KaitlynW, CoreyW, AriaY
 DeCuollo, F, MemphisB, EricB, BritneyB, JacksonC, ClaudiaD, MatthewE, KipG, QuinnG, SkylarH, ColbyH, RyanL, HannahL, BrightonMT, AbigalM, AliciaM, ReeseP, EndineP, HannahR, GraceS, TaylorS, DanielleS, AnaeT, GraceW, AdeleineW
-Example, A, Example1, Example2, Example3, Example4, Example5
-Example, B, Example1, Example2, Example3, Example4, Example5
