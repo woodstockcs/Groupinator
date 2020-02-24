@@ -5,6 +5,7 @@ var skiplist = [];
 var teacherList=[];
 var allClasses = [];
 var url = window.location.href;
+    console.log("test");
     var captured = /teacher=([^&]+)/.exec(url)[1]; // Value is in [1] ('384' in our case)
     var result = captured ? captured :'my Default Value' ;
     var Teachers= ["Poublon", "Bremel", "Vonada", "Smith", "McGovern", "Kent"];
