@@ -83,10 +83,10 @@ $(document).ready(function() {
         switch (this.value) {
 
             case "a":
-                var workingClass= findBlock(teacherList,"A");
+                var workingClass= findBlock(teacherList,"1");
                 break;
             case "b":
-                var workingClass= findBlock(teacherList,"B");
+                var workingClass= findBlock(teacherList,"2");
                 break;
             case "c":
                  var workingClass= findBlock(teacherList,"C");
