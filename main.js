@@ -80,6 +80,7 @@ $(document).ready(function() {
       $('#blockSelector').on('change', function() {
 
         // populate textarea with premade student lists
+          console.log(this.value)
         switch (this.value) {
 
             case "a":
