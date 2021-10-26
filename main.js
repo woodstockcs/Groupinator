@@ -120,20 +120,22 @@ $(document).ready(function() {
 
 
         // grab group size
-        switch (this.value) {
-            case "2":
-              theGroupSize = 2;
-              break;
-            case "3":
-              theGroupSize = 3;
-              break;
-            case "4":
-              theGroupSize = 4;
-              break;
-            case "5":
-              theGroupSize = 5;
-              break;
-        }
+//         switch (this.value) {
+//             case "2":
+//               theGroupSize = 2;
+//               break;
+//             case "3":
+//               theGroupSize = 3;
+//               break;
+//             case "4":
+//               theGroupSize = 4;
+//               break;
+//             case "5":
+//               theGroupSize = 5;
+//               break;
+//         }
+          
+          theGroupSize = parseInt(this.value);
 
       })
 
@@ -181,6 +183,7 @@ function createGroups() {
         }
     }
 
+    console.log(rClass);
     // figure out the vital stats
     var theStudentCount = rClass.length;
     var theGroupCount = Math.floor(theStudentCount / theGroupSize) + 1;
