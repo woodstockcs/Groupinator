@@ -209,9 +209,9 @@ function createGroups() {
         }
     }
     // not sure what's going on
-    else if (theStudentCount % theGroupSize > theStudentCount / theGroupSize) {
-        alert("OH NO - Select a smaller group size - RIP");
-    }
+//     else if (theStudentCount % theGroupSize > theStudentCount / theGroupSize) {
+//         alert("OH NO - Select a smaller group size - RIP");
+//     }
     // uneven distribution
     else {
       console.log("***spillover mode***")
