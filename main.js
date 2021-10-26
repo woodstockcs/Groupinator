@@ -8,7 +8,7 @@ var url = window.location.href;
     console.log("tEST2");
     var captured = /teacher=([^&]+)/.exec(url)[1]; // Value is in [1] ('384' in our case)
     var result = captured ? captured :'my Default Value' ;
-    var Teachers= ["Poublon", "Bremel", "Vonada", "Smith", "McGovern", "Kent"];
+    var Teachers= ["Poublon", "Bremel", "Vonada", "Smith", "McGovern", "Kent", "Circles"];
     var inList= false ;
     for (var i = 0; i < Teachers.length; i++){
       // console.log("Teacher: "+captured);
@@ -257,7 +257,7 @@ $.each(theGroups, function(index, item) {
     if (item[0])
     {
     t.row.add([
-        index + 1,
+        getGroupName(index),
         stringify(item)
     ]);
   }
@@ -265,6 +265,16 @@ $.each(theGroups, function(index, item) {
 t.draw();
 }
 
+function getGroupName(idx) {
+    let names = [];
+    if (captured === "Circles") {
+        names = ["one", "two", "three"];
+        if (idx < names.length) {
+            return names[idx];
+        }
+    }
+    return idx + 1;
+}
 
 function stringify(lst) {
     var cleaned = new Array();
