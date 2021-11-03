@@ -1,4 +1,4 @@
-Smith, A, CatieA,DustinB,WillC,HarperD,KassidyH,LeviH,KatieJ,NickL,EzraL,RemyM,RiverM,MikaylaM,OttoN,WilliamO,ChanceP,OwenQ,AnnaR,GraceS,CadenS,AndrewS,NikS
-Smith, B, Hailey,Mac,Ali,Phoebe,Abass,Colton,Kuba,Clara,Rowan
+Smith, A, CatieA,DustinB,WillC,HarperD,KassidyH,LeviH,KatieJ,NickL,EzraL,RemyM,RiverM,MikaylaM,OttoN,WilliamO,ChanceP,OwenQ,AnnaR,GraceS,CadenS,AndrewS,NikS,TessM
+Smith, B, Hailey,Mac,Ali,Phoebe,Abass,Colton,Kuba,Clara,Rowan,Brooke,Charley
 Smith, C, Liam, Nate, Carolyn, Wyatt, Kip, Alixx, Nina, Meridian, Nixon, Joe, Nathaniel, Zoë, Tess, Devin, Nick
-Smith, F, Liam, Josh, Kali, Ary, Evan, Sam, Morgan, Cooper, Reece, Danny, Oliver, Devin
+Smith, F, Liam, Josh, Kali, Ary, Evan, Sam, Morgan, Cooper, Reece, Danny, Oliver, Devin, Ethan
